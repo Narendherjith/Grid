@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Template Areas</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+        .grid-container-1{
+            display: grid;
+            height: 100vh;
+            grid-template-columns: repeat(4,1fr);
+            grid-template-areas: 
+                                'a b b c' 
+                                'a d e f' 
+                                'a g h f'
+                                  ;
+            background-color:rgb(40, 43, 87);
+            gap: 10px;
+        }
+        .column-1{
+            background-color:rgb(73, 165, 73);
+            grid-area: a;
+        }
+        .column-2{
+            background-color: rgb(73, 165, 73);
+            grid-area: b;
+        }
+        .column-3{
+            background-color: rgb(209, 37, 37);
+            grid-area: c;
+        }
+        .column-4{
+            background-color: rgb(226, 195, 20);
+            grid-area: d;
+        }
+        .column-5{
+            background-color: rgb(209, 37, 37);
+            grid-area: e;
+        }
+        .column-6{
+            background-color: rgb(73, 165, 73);
+            grid-area: f;
+        }
+        .column-7{
+            background-color: rgb(209, 37, 37);
+            grid-area: g;
+        }
+        .column-8{
+            background-color: rgb(226, 195, 20);
+            grid-area: h;
+        }
+        @media screen and (max-width : 900px) {
+            .grid-container-1{
+                grid-template-columns: repeat(2,1fr);
+                grid-template-areas: 
+                'a b'
+                'c d'
+                'e f'
+                'g h'
+                ;
+            }
+            
+        }
+        @media screen and (max-width : 450px) {
+            .grid-container-1{
+                grid-template-columns: 1fr;
+                grid-template-areas: 
+                'a'
+                'b'
+                'c'
+                'd'
+                'e'
+                'f'
+                'g'
+                'h'
+                ;
+            }   
+        }
+
+      /*  @media screen and (max-width : 900px) and (min-width : 451px) {
+            .grid-container-1{
+                grid-template-columns: repeat(2,1fr);
+                grid-template-areas: 
+                'a b'
+                'c d'
+                'e f'
+                'g h'
+                ;
+            }
+            
+        }*/
+        /* Task-2  */
+
+        .grid-container-2{
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            height: 100vh;
+            background-color: rgb(61, 60, 60);
+            gap: 10px;
+            padding: 12px;
+            grid-template-areas: 
+            'a a a'
+            'b c c'
+            'b d e'
+            'f f f'
+            ;
+        }
+        .header{
+            grid-area: a;
+            background-color: rgb(129, 99, 238);
+            color: white;
+            font-size: 1.5rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, Helvetica, sans-serif;
+            border: 5px solid black;
+        }
+        aside{
+            grid-area: b;
+            background-color: rgb(95, 241, 241);
+            color: white;
+            font-size: 1.5rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Aria
+        }
+        .content-1{
+            grid-area: c;
+            background-color: rgb(62, 108, 236);
+            color: white;
+            font-size: 1.5rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, Helvetica, sans-serif;
+            border: 5px solid black;
+        }
+        .content-2{
+            grid-area: d;
+            background-color: rgb(62, 108, 236);
+            color: white;
+            font-size: 1.5rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, Helvetica, sans-serif;
+            border: 5px solid black;
+        }
+        .content-3{
+            grid-area: e;
+            background-color: rgb(62, 108, 236);
+            color: white;
+            font-size: 1.5rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, Helvetica, sans-serif;
+            border: 5px solid black;
+        }
+        footer{
+            grid-area: f;
+            background-color: rgb(129, 99, 238);
+            color: white;
+            font-size: 1.5rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, Helvetica, sans-serif;
+            border: 5px solid black;
+        }
+        @media screen and (max-width : 900px) {
+            .grid-container-2{
+                grid-template-columns: repeat(2,1fr);
+                grid-template-areas: 
+                'a b'
+                'c d'
+                'e f'
+                ;
+            }
+        }
+        @media screen and (max-width : 450px) {
+            .grid-container-2{
+                grid-template-columns: 1fr;
+                grid-template-areas: 
+                'a'
+                'b'
+                'c'
+                'd'
+                'e'
+                'f';
+            }
+        }
+        /*  Task-3 */
+        .grid-container-3{
+            display: grid;
+            grid-template-columns: repeat(5,1fr);
+            padding: 10px;
+            gap: 10px;
+            height: 100vh;
+            background-color: rgb(61, 60, 60);
+            grid-template-areas:
+            'a a a a a'
+            'b c c d d'
+            'e c c f f'
+            'g h i j k'
+            'l m i n o'
+            ;
+           
+        }
+        .header-1{
+            grid-area:a;
+            text-align: center;
+            align-items: center;
+            color: #cedfe9;
+            height: 25px;
+        }
+        .header-1 h1,
+        .header-1 h2 {
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+
+        }
+
+        .header-1 h1 {
+            /*position: relative;*/
+            padding-bottom: 0.5em;
+            color: #ffffff;
+            font-size: 2rem;
+            top: 10px;
+        }
+
+        .header-1 h2 {
+            font-weight: normal;
+            font-size: 0.875rem;
+        }
+
+        .item-1 {
+            grid-area:b;
+            background-color: rgb(226, 153, 216);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .item-2 {
+           grid-area:c;
+            background-color: rgb(226, 153, 216);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .item-3 {
+            grid-area:d;
+            background-color: rgb(127, 255, 255);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .item-4 {
+            grid-area:e;        
+            background-color: rgb(127, 255, 255);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .item-5 {
+            grid-area:f;
+            background-color: lightpink;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .item-6 {
+           grid-area:g;
+            background-color: lightpink;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .item-7 {
+            grid-area:h;
+            background-color: lightpink;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .item-8 {
+           grid-area:i;
+            background-color: lightpink;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .item-9 {
+           grid-area:j;
+            background-color: lightpink;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .item-10 {
+            grid-area:k;
+            background-color: lightpink;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .item-11 {
+            grid-area:l;
+            background-color: lightpink;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .item-12 {
+            grid-area:m;
+            background-color: lightpink;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .item-13 {
+            grid-area:n;
+            background-color: lightpink;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .item-14 {
+            grid-area:o;
+            background-color: lightpink;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        @media screen and (max-width : 900px) {
+            .grid-container-3{
+                grid-template-columns: repeat(3,1fr);
+                grid-template-areas: 
+                'a b c'
+                'd e f'
+                'g h i'
+                'j k l'
+                'm n o'
+                ;
+            }
+        }
+        @media screen and (max-width :450px) {
+            .grid-container-3{
+                grid-template-columns: 1fr;
+                grid-template-areas: 
+                'a'
+                'b'
+                'c'
+                'd'
+                'e'
+                'f'
+                'g'
+                'h'
+                'i'
+                'j'
+                'k'
+                'l'
+                'm'
+                'n'
+                'o'
+                ;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <h3>Task-1</h3>
+    <div class="grid-container-1">
+        <div class="column-1"></div>
+        <div class="column-2"></div>
+        <div class="column-3"></div>
+        <div class="column-4"></div>
+        <div class="column-5"></div>
+        <div class="column-6"></div>
+        <div class="column-7"></div>
+        <div class="column-8"></div>
+    </div>
+
+    
+    <h3>Task-2</h3>
+
+    <div class="grid-container-2">
+        <div class="header">header</div>
+        <aside class="left">sidebar</aside>
+        <div class="content-1">content-1</div>
+        <div class="content-2">content-2</div>
+        <div class="content-3">content-3</div>
+        <footer>footer</footer>
+    </div>
+    <h3>Task-3</h3>
+    <div class="grid-container-3">
+        <header class="header-1">
+            <h1>CSS Grid Layout</h1>
+            <h2>With @support flexbox fallback.</h2>
+        </header>
+        <div class="item-1">
+            1
+        </div>
+        <div class="item-2">
+            2
+        </div>
+        <div class="item-3">
+            3
+        </div>
+        <div class="item-4">
+            4
+        </div>
+        <div class="item-5">
+           5
+        </div>
+        <div class="item-6">
+            6
+        </div>
+        <div class="item-7">
+            7
+        </div>
+        <div class="item-8">
+            8
+        </div>
+        <div class="item-9">
+            9
+        </div>
+        <div class="item-10">
+            10
+        </div>
+        <div class="item-11">
+            11
+        </div>
+        <div class="item-12">
+           12
+        </div>
+        <div class="item-13">
+           13
+        </div>
+        <div class="item-14">
+            14
+        </div>
+    </div>
+</body>
+</html>
